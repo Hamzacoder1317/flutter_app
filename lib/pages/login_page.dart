@@ -10,6 +10,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String name = "";
+  String pass = "";
   bool buttonChange = false;
   final _formKey = GlobalKey<FormState>();
 
@@ -18,8 +19,9 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         buttonChange = true;
       });
-      await Future.delayed(Duration(seconds: 1));
-      await Navigator.pushNamed(context, MyRoute.Homeroute);
+      await Future.delayed(Duration(seconds: 001));
+      await Navigator.pushNamed(context, MyRoute.Homeroute,
+          arguments: {'name': name, 'pass': pass});
       setState(() {
         buttonChange = false;
       });
@@ -30,7 +32,6 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 119, 101, 255),
         toolbarHeight: 3,
       ),
       body: SingleChildScrollView(
@@ -56,7 +57,8 @@ class _LoginPageState extends State<LoginPage> {
                   height: 20,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 40),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 40),
                   child: Column(
                     children: [
                       TextFormField(
@@ -86,12 +88,18 @@ class _LoginPageState extends State<LoginPage> {
                           }
                           return null;
                         },
+                        onChanged: (value) {
+                          setState(() {
+                            pass = value;
+                          });
+                        },
                       ),
                       const SizedBox(
                         height: 20,
                       ),
                       Material(
-                        borderRadius: BorderRadius.circular(buttonChange ? 100 : 10),
+                        borderRadius:
+                            BorderRadius.circular(buttonChange ? 100 : 10),
                         color: Colors.deepPurple,
                         child: InkWell(
                           onTap: () => moveToHome(context),
