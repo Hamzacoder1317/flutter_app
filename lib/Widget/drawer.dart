@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
+  const MyDrawer({super.key});
+
   @override
   Widget build(BuildContext context) {
     // Safely handle null arguments
@@ -10,7 +12,7 @@ class MyDrawer extends StatelessWidget {
     // Use default values if no arguments are passed
     String name = args?['name'] ?? 'Guest';
     String password = args?['pass'] ?? 'No Password';
-    final String imageUrl = "https://hamzacoder.site/img/hamza.png";
+    const String imageUrl = "https://hamzacoder.site/img/hamza.png";
 
     return Drawer(
       child: ListView(
