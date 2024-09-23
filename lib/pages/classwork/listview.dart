@@ -34,8 +34,6 @@ class MyAppState extends State<MyApp> {
           
           tiles:[
 ListTile(
-
-
 leading: Icon(Icons.person),
 title:  Text('Hamza'),
 subtitle: Text("Massage +99."),
@@ -45,12 +43,9 @@ trailing: Icon(Icons.camera),
 contentPadding: EdgeInsets.all(10.0),
 tileColor:Colors.grey,
 onTap: (){},
-
 ),
 ListTile(
-
-
-leading: Icon(Icons.person),
+leading: CircleAvatar( backgroundImage: AssetImage('../assets/images/hey_image.png'),),
 title:  Text('Huzaifa'),
 subtitle: Text("Massage 8."),
 trailing: Icon(Icons.camera),
@@ -59,12 +54,9 @@ trailing: Icon(Icons.camera),
 contentPadding: EdgeInsets.all(10.0),
 tileColor:Colors.grey,
 onLongPress: (){},
-
 ),
 ListTile(
-
-
-leading: Icon(Icons.person),
+leading: CircleAvatar(child: Text('W'), backgroundColor: Colors.black , foregroundColor: Colors.white,),
 title:  Text('Harib'),
 subtitle: Text("Seen", style: TextStyle(fontWeight:FontWeight.w100),),
 trailing: Icon(Icons.camera),
@@ -73,13 +65,8 @@ trailing: Icon(Icons.camera),
 contentPadding: EdgeInsets.all(10.0),
 tileColor:Colors.grey,
 onLongPress: (){},
-
 )
-
-
-
-
-          ]).toList()
+]).toList()
         
         ),
       ),
